@@ -6,7 +6,7 @@ export default function QuickMenu() {
   const pathname = usePathname(); // Get the current path
 
   const menuItems = [
-    { href: "/settings", label: "Rewards" },
+    { href: "/settings", label: "List" },
     { href: "/", label: "Home" },
     { href: "/leaderboard", label: "Leaderboard" },
     // { href: "/rewards", label: "Select Rewards" },
@@ -18,7 +18,7 @@ export default function QuickMenu() {
         <Link
           key={item.href}
           href={item.href}
-          className={`flex-1 text-center px-4 py-2 rounded hover:bg-gray-300 ${
+          className={`flex-1 text-center px-4 py-2 rounded-full hover:bg-gray-300 ${
             pathname === item.href
               ? "bg-purple-300 text-black"
               : "bg-gray-300 text-black"

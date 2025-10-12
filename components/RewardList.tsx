@@ -35,10 +35,10 @@ export default function RewardList({
                 type="text"
                 value={newName}
                 onChange={(e) => setNewName(e.target.value)}
-                className="bg-white px-2 py-1 rounded"
+                className="bg-white px-2 py-1 rounded-full"
               />
               <button
-                className="px-4 py-2 bg-purple-300 text-black rounded hover:bg-green-600"
+                className="px-4 py-2 bg-purple-300 text-black rounded-full hover:bg-green-600"
                 onClick={() => updateRewardName(reward.id, newName)}
               >
                 Save
@@ -48,7 +48,7 @@ export default function RewardList({
             <>
               <h3 className="text-lg font-semibold">{reward.name}</h3>
               <button
-                className="px-4 py-2 bg-purple-300 text-black rounded hover:bg-purple-600"
+                className="px-4 py-2 bg-purple-300 text-black rounded-full hover:bg-purple-600"
                 onClick={() => {
                   setEditingRewardId(reward.id);
                   setNewName(reward.name);

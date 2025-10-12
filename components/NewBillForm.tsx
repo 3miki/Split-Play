@@ -59,7 +59,7 @@ export default function NewBillForm({
       </div>
       <button
         type="submit"
-        className="px-4 py-2 bg-purple-300 text-black rounded hover:bg-purple-600"
+        className="px-4 py-2 bg-purple-300 text-black rounded-full hover:bg-purple-600"
       >
         Save Bill
       </button>

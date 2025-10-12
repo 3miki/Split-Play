@@ -11,7 +11,7 @@ export default function SaveBillButton({
     <button
       onClick={onClick}
       disabled={disabled}
-      className="px-4 py-2 bg-purple-300 text-black rounded hover:bg-green-600 disabled:bg-gray-300"
+      className="px-4 py-2 bg-purple-300 text-black rounded-full hover:bg-green-600 disabled:bg-gray-300"
     >
       Save Bill
     </button>

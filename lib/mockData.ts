@@ -74,7 +74,7 @@ export const mockScores: Score[] = [
     points: 100,
   },
   {
-    user: "batman",
-    points: 80,
+    user: "Batman",
+    points: 10,
   },
 ];
