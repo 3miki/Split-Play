@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import NewBillForm from "../../components/NewBillForm";
 import { Bill } from "../../types";
 import { useBillStore } from "../../stores";
+import { mockUser } from "../../lib/mockData";
 
 export default function AddBill() {
   const router = useRouter();
@@ -13,7 +14,10 @@ export default function AddBill() {
     const newBill: Bill = {
       ...billData,
       id: Date.now(),
-      users: billData.users || [],
+      users: billData.users?.filter((user) => user.name !== mockUser) || [
+        { name: "Miki", paid: false },
+        { name: "Batman", paid: false },
+      ],
     };
     addBill(newBill);
     router.push("/");

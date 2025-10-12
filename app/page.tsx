@@ -32,15 +32,21 @@ export default function TaskBoard() {
       {/* Pay Bills Section */}
       <div className="mb-8">
         <h2 className="text-xl font-semibold mb-4">Pay Bills</h2>
-        <BillList bills={payBills} handlePay={handlePay} user={user} />
+        {payBills.length > 0 ? (
+          <BillList bills={payBills} handlePay={handlePay} user={user} />
+        ) : (
+          <p className="text-gray-500">No bills to pay.</p>
+        )}
       </div>
 
       {/* View Details Section */}
       <div className="mb-8">
-        <h2 className="text-xl font-semibold mb-4">
-          View Details of Created Bills
-        </h2>
-        <BillList bills={createdBills} handlePay={handlePay} user={user} />
+        <h2 className="text-xl font-semibold mb-4">Your Created Bills</h2>
+        {createdBills.length > 0 ? (
+          <BillList bills={createdBills} handlePay={handlePay} user={user} />
+        ) : (
+          <p className="text-gray-500">No created bills.</p>
+        )}
       </div>
 
       {/* Add New Bill */}

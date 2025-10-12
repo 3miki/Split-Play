@@ -1,5 +1,4 @@
 import { Bill, User } from "../types";
-import PayButton from "./PayButton";
 
 interface BillListProps {
   bills: Bill[];
@@ -27,11 +26,11 @@ export default function BillList({
             <h2 className="text-lg font-bold">{bill.title}</h2>
             <p>
               £{(bill.amount / (bill.users?.length || 1)).toFixed(2)} per person
-              - {bill.status}
+              {bill.created_by === user ? "" : ` - ${bill.status}`}
             </p>
           </div>
 
-          {bill.created_by === user && (
+          {/* {bill.created_by === user && (
             <div className="mt-2">
               <p className="text-sm font-semibold">Unpaid Users:</p>
               <ul className="list-disc list-inside">
@@ -42,14 +41,11 @@ export default function BillList({
                   ))}
               </ul>
             </div>
-          )}
+          )} */}
           <button
             onClick={() => {
-              if (bill.users?.some((u) => u.name === user && !u.paid)) {
-                handlePay(bill.id);
-              } else {
-                console.log("View details for bill:", bill.id);
-              }
+              handlePay(bill.id);
+              console.log("View details for bill:", bill.id);
             }}
             className={`px-4 py-2 rounded ${
               bill.users?.some((u) => u.name === user && !u.paid)
@@ -59,7 +55,7 @@ export default function BillList({
           >
             {bill.users?.some((u) => u.name === user && !u.paid)
               ? "Pay"
-              : "View Details"}
+              : "View"}
           </button>
         </div>
       ))}

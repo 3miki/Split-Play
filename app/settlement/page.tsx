@@ -25,7 +25,6 @@ export default function SettleBill() {
       console.log(
         `User "${user}" has settled their share for the bill "${bill.title}".`
       );
-      //   window.location.href = "/";
       router.push("/");
     }
   };
