@@ -27,7 +27,7 @@ export default function TaskBoard() {
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4 text-center">Hi {user}</h1>
+      <h1 className="text-2xl font-bold mb-4 text-center">Hi {user} 👋</h1>
 
       {/* Pay Bills Section */}
       <div className="mb-8">
