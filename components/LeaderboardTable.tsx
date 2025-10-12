@@ -13,7 +13,7 @@ export default function LeaderboardTable({ scores }: LeaderboardTableProps) {
         {sortedScores.map((score, index) => (
           <tr className="" key={score.user}>
             <td className="p-2 font-bold">{index + 1}</td>
-            <td className="p-2">🏆</td>
+            <td className="p-2">👤</td>
             <td className="p-2 font-bold">{score.user}</td>
             <td className="p-2">{score.points} pt</td>
           </tr>

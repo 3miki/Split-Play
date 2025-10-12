@@ -12,6 +12,7 @@ export const mockBills: Bill[] = [
     users: [
       { name: "Miki", paid: true },
       { name: "Grace", paid: false },
+      { name: "Batman", paid: false },
     ],
   },
   {
@@ -23,28 +24,22 @@ export const mockBills: Bill[] = [
     users: [
       { name: "Grace", paid: true },
       { name: "Miki", paid: false },
+      { name: "Batman", paid: false },
+    ],
+  },
+  {
+    id: 3,
+    title: "Electric Bill",
+    amount: 20,
+    status: "paid",
+    created_by: "Miki",
+    users: [
+      { name: "Miki", paid: true },
+      { name: "Grace", paid: true },
+      { name: "Batman", paid: false },
     ],
   },
 ];
-//   {
-//     id: 2,
-//     title: "Electric Bill",
-//     amount: 20,
-//     status: "unpaid",
-//     created_by: "Grace",
-//   },
-
-export const mockSettleBill: Bill = {
-  id: 2,
-  title: "Electric Bill",
-  amount: 20,
-  status: "paid",
-  created_by: "Miki",
-  users: [
-    { name: "Miki", paid: true },
-    { name: "Grace", paid: true },
-  ],
-};
 
 export const mockRewards: Reward[] = [
   {

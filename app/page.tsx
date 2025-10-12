@@ -7,9 +7,19 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 export default function TaskBoard() {
-  const { bills, updateBill } = useBillStore();
+  const { bills } = useBillStore();
   const { user } = useUserStore();
   const router = useRouter();
+
+  // Filter bills where the current user needs to pay
+  const payBills = bills.filter(
+    (bill) =>
+      bill.status === "unpaid" &&
+      bill.users.some((u) => u.name === user && !u.paid)
+  );
+
+  // Filter bills created by the current user
+  const createdBills = bills.filter((bill) => bill.created_by === user);
 
   const handlePay = (billId: number) => {
     router.push(`/settlement?billId=${billId}`);
@@ -17,13 +27,23 @@ export default function TaskBoard() {
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4 text-center">Hi Grace</h1>
-      <BillList
-        bills={bills.filter((bill) => bill.status !== "paid")}
-        handlePay={handlePay}
-        user={user}
-      />
+      <h1 className="text-2xl font-bold mb-4 text-center">Hi {user}</h1>
 
+      {/* Pay Bills Section */}
+      <div className="mb-8">
+        <h2 className="text-xl font-semibold mb-4">Pay Bills</h2>
+        <BillList bills={payBills} handlePay={handlePay} user={user} />
+      </div>
+
+      {/* View Details Section */}
+      <div className="mb-8">
+        <h2 className="text-xl font-semibold mb-4">
+          View Details of Created Bills
+        </h2>
+        <BillList bills={createdBills} handlePay={handlePay} user={user} />
+      </div>
+
+      {/* Add New Bill */}
       <div className="mt-4">
         <Link href="/newbill">
           <AddButton onClick={() => {}} />

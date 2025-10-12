@@ -10,7 +10,11 @@ export default function AddBill() {
   const { addBill } = useBillStore();
 
   const handleSubmit = (billData: Omit<Bill, "id">) => {
-    const newBill: Bill = { ...billData, id: Date.now() };
+    const newBill: Bill = {
+      ...billData,
+      id: Date.now(),
+      users: billData.users || [],
+    };
     addBill(newBill);
     router.push("/");
   };

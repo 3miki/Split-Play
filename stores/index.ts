@@ -6,8 +6,8 @@ import {
   mockScores,
   mockUser,
   mockClaims,
-  mockSettleBill,
 } from "../lib/mockData";
+import { mock } from "node:test";
 
 interface BillStore {
   bills: Bill[];
@@ -102,6 +102,6 @@ interface SettleBillStore {
   setSettleBill: (bill: Bill) => void;
 }
 export const useSettleBillStore = create<SettleBillStore>((set) => ({
-  settleBill: mockSettleBill,
+  settleBill: mockBills[0],
   setSettleBill: (bill) => set({ settleBill: bill }),
 }));

@@ -26,7 +26,8 @@ export default function BillList({
           <div>
             <h2 className="text-lg font-bold">{bill.title}</h2>
             <p>
-              £{bill.amount.toFixed(2)} - {bill.status}
+              £{(bill.amount / (bill.users?.length || 1)).toFixed(2)} per person
+              - {bill.status}
             </p>
           </div>
 
@@ -45,9 +46,9 @@ export default function BillList({
           <button
             onClick={() => {
               if (bill.users?.some((u) => u.name === user && !u.paid)) {
-                handlePay(bill.id); // Trigger payment logic if the user needs to pay
+                handlePay(bill.id);
               } else {
-                console.log("View details for bill:", bill.id); // Replace with navigation logic if needed
+                console.log("View details for bill:", bill.id);
               }
             }}
             className={`px-4 py-2 rounded ${
