@@ -17,7 +17,7 @@ export default function TaskBoard() {
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4 text-center">Hi Grace</h1>
+      <h1 className="text-2xl font-bold mb-4 text-center">Hi Grace👋</h1>
       <BillList
         bills={bills.filter((bill) => bill.status !== "paid")}
         handlePay={handlePay}

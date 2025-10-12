@@ -8,7 +8,7 @@ export default function AddRewardButton({ onClick }: AddRewardButtonProps) {
       onClick={onClick}
       className="px-4 py-2 bg-purple-300 text-black rounded hover:bg-green-600"
     >
-      Add Reward
+      Add Chore
     </button>
   );
 }
