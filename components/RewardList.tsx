@@ -48,7 +48,7 @@ export default function RewardList({
             <>
               <h3 className="text-lg font-semibold">{reward.name}</h3>
               <button
-                className="px-4 py-2 bg-purple-300 text-black rounded-full hover:bg-purple-600"
+                className="px-4 py-2 bg-purple-300 text-black rounded-full hover:bg-purple-500"
                 onClick={() => {
                   setEditingRewardId(reward.id);
                   setNewName(reward.name);

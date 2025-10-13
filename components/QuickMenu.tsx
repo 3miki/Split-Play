@@ -13,7 +13,7 @@ export default function QuickMenu() {
   ];
 
   return (
-    <div className="flex justify-center space-x-4">
+    <div className="flex justify-center space-x-4 m-2">
       {menuItems.map((item) => (
         <Link
           key={item.href}

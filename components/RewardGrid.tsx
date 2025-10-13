@@ -49,10 +49,10 @@ export default function RewardGrid({
                   ]);
                 }
               }}
-              className={`ml-4 px-4 py-2 rounded-lg ${
+              className={`ml-4 px-4 py-2 rounded-full ${
                 isSelected || claim?.user
                   ? "bg-purple-300 text-black"
-                  : "bg-purple-300 text-black hover:bg-purple-600"
+                  : "bg-purple-300 text-black hover:bg-purple-500"
               }`}
             >
               {isSelected || claim?.user ? "Selected" : "Pick"}

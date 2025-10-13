@@ -16,16 +16,10 @@ export default function Leaderboard() {
     <div className="container mx-auto p-4">
       <h1 className="text-2xl font-bold mb-4 text-center">Leaderboard</h1>
       <div className="m-4 flex justify-center space-x-4">
-        <button
-          onClick={() => handleButtonClick()}
-          className="bg-purple-300 text-black px-4 py-2 rounded-full hover:bg-purple-600"
-        >
+        <button className="bg-purple-300 text-black px-4 py-2 rounded-full hover:bg-purple-500">
           This week
         </button>
-        <button
-          onClick={() => handleButtonClick()}
-          className="bg-purple-300 text-black px-4 py-2 rounded-full hover:bg-purple-600"
-        >
+        <button className="bg-purple-500 text-black px-4 py-2 rounded-full hover:bg-purple-500">
           All time
         </button>
       </div>
@@ -33,7 +27,7 @@ export default function Leaderboard() {
       <div className="mt-4 flex justify-center">
         <button
           onClick={() => handleButtonClick()}
-          className="bg-purple-300 text-black px-4 py-2 rounded-full hover:bg-purple-600"
+          className="bg-purple-300 text-black px-4 py-2 rounded-full hover:bg-purple-500"
         >
           Go to Chore Selection
         </button>

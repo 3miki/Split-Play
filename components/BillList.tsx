@@ -49,8 +49,8 @@ export default function BillList({
             }}
             className={`px-4 py-2 rounded-full ${
               bill.users?.some((u) => u.name === user && !u.paid)
-                ? "bg-purple-300 text-black hover:bg-purple-600"
-                : "bg-purple-300 text-black hover:bg-purple-600"
+                ? "bg-purple-300 text-black hover:bg-purple-500"
+                : "bg-purple-300 text-black hover:bg-purple-500"
             }`}
           >
             {bill.users?.some((u) => u.name === user && !u.paid)
